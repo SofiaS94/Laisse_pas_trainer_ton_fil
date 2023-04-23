@@ -54,11 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Je vérifie si le formulaire est 
 <?php
 // Affichage des erreurs sous forme d'une liste HTML si il y a des erreurs
 if (!empty($errors)) { ?>
-    <ul>
-        <?php foreach ($errors as $error) { ?>
-            <li><?= $error ?></li>
-        <?php } ?>
-    </ul>
+<ul>
+    <?php foreach ($errors as $error) { ?>
+    <li><?= $error ?></li>
+    <?php } ?>
+</ul>
 <?php
 }
 
@@ -66,20 +66,21 @@ if (!empty($errors)) { ?>
    
 
 if (isset($filePath)) { ?>
-    <p> Bonjour <?= $firstname . ' ' . $lastname . ', ' ?>bienvenue sur SpringfieldWild! <br>  <br> Vous avez <?= $age . 'ans' ?>.<br>
-       Ceci est votre avatar : <br> <img src=" <?= $filePath ?> " alt="votre avatar" />.
-      <p> LICENSE #64209 BIRTH DATE 4-24-56 EXPIRES 4-24-2015 CLASS NONE
+<p> Bonjour <?= $firstname . ' ' . $lastname . ', ' ?>bienvenue sur SpringfieldWild! <br> <br> Vous avez
+    <?= $age . 'ans' ?>.<br>
+    Ceci est votre avatar : <br> <img src=" <?= $filePath ?> " alt="votre avatar" />.
+<p> LICENSE #64209 BIRTH DATE 4-24-56 EXPIRES 4-24-2015 CLASS NONE
 
-DRIVERS LICENCE
+    DRIVERS LICENCE
 
-HOMER SIMPSON 
-69 OLD PLUMTREE BLVD
-SPRINGFIELD, IL 62701
+    HOMER SIMPSON
+    69 OLD PLUMTREE BLVD
+    SPRINGFIELD, IL 62701
 
-SEX : OK  HEIGHT : MEDIUM  WEIGHT : 239 HAIR: NONE EYES: OVAL 
+    SEX : OK HEIGHT : MEDIUM WEIGHT : 239 HAIR: NONE EYES: OVAL
 
-X HOMER SIMPSON 
-        SIGNATURE </p>
+    X HOMER SIMPSON
+    SIGNATURE </p>
 
 <?php
 }
@@ -91,4 +92,11 @@ X HOMER SIMPSON
 <form method="post" enctype="multipart/form-data">
     <label for="firstname"> Votre prénom</label>
     <input type="text" name="firstname" />
-    <label for
+    <label for="lastname"> Votre nom</label>
+    <input type="text" name="lastname" />
+    <label for="age"> Votre age</label>
+    <input type="int" name="age" />
+    <label for="imageUpload">Votre avatar</label>
+    <input type="file" name="avatar" id="imageUpload" />
+    <button name="send">Send</button>
+</form>
